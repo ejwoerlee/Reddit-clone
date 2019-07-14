@@ -1,4 +1,13 @@
 import { Component, Input } from '@angular/core';
+import { strictEqual } from 'assert';
+
+class Article {
+  constructor(
+    public title: string,
+    public description: string
+  ) {
+  }
+}
 
 @Component({
    selector: 'app-sidebar',
@@ -16,11 +25,12 @@ export class SidebarComponent {
   template: `
   <div>
     <h2> {{ article.title }} </h2>
+    <p> {{ article.description }} </p>
   </div>
  `
 })
 export class ArticleComponent {
-  @Input() article: object;
+  @Input() article: Article;
 }
 
 @Component({
@@ -39,26 +49,30 @@ export class ArticleComponent {
   `
 })
 export class AppComponent {
-  articles: object[];
+  articles: Article[];
   title = 'Reddit-clone';
 
   constructor() {
-    this.articles =
-    [{
-        title: 'The angular 2 screencast',
-        description: 'The easiest way to learn ng'
-      }, {
-        title: 'Fullstack React',
-        description: 'This is react'
-      }, {
-        title: 'Vue',
-        description: 'Another javascript framework'
-      }, {
-        title: 'Test1',
-        description: 'Description test1'
-      }, {
-        title: 'Test2',
-        description: 'Description test2'
-    }];
+    this.articles = [
+      new Article (
+         'The angular 2 screencast',
+         'The easiest way to learn ng'
+     ),
+      new Article (
+        'Fullstack React',
+         'This is react'
+     ), 
+     new Article(
+         'Vue',
+         'Another javascript framework'
+     ), 
+     new Article (
+         'Test1',
+         'Description test1'
+     ),
+     new Article (
+         'Test2',
+         'Description test2'
+     )];
   }
 }
