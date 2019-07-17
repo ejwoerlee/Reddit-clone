@@ -1,4 +1,4 @@
-Waar gebleven in video ? 49:00
+Waar gebleven in video ? 01:00:31
 
 
 # RedditClone
