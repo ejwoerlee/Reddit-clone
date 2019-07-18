@@ -1,5 +1,12 @@
 Waar gebleven in video ? 01:00:31
 
+ng commands:
+============
+Via terminal:
+
+$ ng generate component sidebar
+$ ng generate class article
+
 
 # RedditClone
 # ejw
